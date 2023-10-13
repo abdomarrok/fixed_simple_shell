@@ -52,7 +52,7 @@ int main(int argc, char **argv)
             argv[i] = malloc(sizeof(char) * strlen(token));
             strcpy(argv[i], token);
             token= strtok(NULL,delim);
-            printf("%s", argv[i]);
+            printf("%s\n", argv[i]);
              
         }
     
