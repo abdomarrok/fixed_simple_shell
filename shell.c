@@ -1,13 +1,14 @@
 #include "shell.h"
 
 /**
- * shell -
- * @c:
- * @argv
- * Return: 0
-*/
+ * shell - A simple shell program
+ *
+ * @argv: An array of command-line arguments
+ *
+ * Return: 0 on success, or a non-zero value on failure
+ */
 
-int main(void)
+int main(int argc, char **argv)
 {
     char *prmt = "cisfun$ ",*buffer;
     size_t size = 0;
