@@ -11,47 +11,51 @@
 
 int main(int argc, char **argv)
 {
-    char *prmt = "cisfun$ ", *buffer,*copy_buf,*token;
+    char *prmt = "cisfun$ ", *buffer, *copy_buf, *token;
     size_t size = 0;
     ssize_t num_of_char;
-    int num_of_token=0,i;
-    const char *delim="\n" ;
+    int num_of_token = 0, i;
+    const char *delim = "\n";
     while (1)
     {
         printf("%s", prmt);
         num_of_char = getline(&buffer, &size, stdin);
-        if (num_of_char==-1){
+        if (num_of_char == -1)
+        {
             printf("getting out of cisfun$ ...\n");
             return (-1);
         }
-        copy_buf = malloc(sizeof(char)*num_of_char);
+        copy_buf = malloc(sizeof(char) * num_of_char);
 
-        if(copy_buf=NULL){
+        if (copy_buf = NULL)
+        {
             perror("failed to alloacate memory\n");
-            return(-1);
+            return (-1);
         }
 
-        strcpy(copy_buf,buffer);
-        token = strtok(buffer,delim);
+        strcpy(copy_buf, buffer);
+        token = strtok(buffer, delim);
 
-        while (token!= NULL)
+        while (token != NULL)
         {
             num_of_token++;
-            token =strtok(NULL,delim);
+            token = strtok(NULL, delim);
         }
         num_of_token++;
-        argv =malloc(sizeof(char *) * num_of_token);
-        token=strtok(copy_buf,delim);
-        for(i=0;token!= NULL;i++)
+        argv = malloc(sizeof(char *) * num_of_token);
+        token = strtok(copy_buf, delim);
+        for (i = 0; token != NULL; i++)
         {
-            argv[i] = malloc(sizeof(char)* strlen(token));
-            strcpy(argv[i],token);
-            token=strtok(NULL,delim);
-            printf("%s",argv[i]);
-
+            argv[i] = malloc(sizeof(char) * strlen(token));
+            if (argv[i] == NULL)
+            {
+                perror("failed to allocate memory\n");
+                return (-1);
+            }
+            strcpy(argv[i], token);
+            token = strtok(NULL, delim);
+            printf("%s", argv[i]);
         }
-    
-        
     }
 
     free(buffer);
