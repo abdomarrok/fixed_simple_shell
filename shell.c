@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     char *prmt = "cisfun$ ", *buffer,*copy_buf,*token;
     size_t size = 0;
     ssize_t num_of_char;
-    int num_of_token,i;
+    int num_of_token=0,i;
     const char *delim="\n" ;
     while (1)
     {
@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 
         }
     
-        printf("%s\n", buffer);
+        
     }
 
     free(buffer);
