@@ -16,9 +16,9 @@ int main(int argc, char **argv)
     size_t size = 0;
     ssize_t num_of_char;
     int num_of_token = 0, i;
-    const char *delim = "\n";
+    const char *delim = " \n";
     while (1)
-    {
+    {  
         printf("%s", prmt);
         num_of_char = getline(&buffer, &size, stdin);
         if (num_of_char == -1)
