@@ -27,7 +27,7 @@ int main(int argc, char **argv)
         }
         copy_buf = malloc(sizeof(char) * num_of_char);
 
-        if (copy_buf = NULL)
+        if (copy_buf == NULL)
         {
             perror("failed to alloacate memory\n");
             return (-1);
