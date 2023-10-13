@@ -11,6 +11,7 @@
 
 int main(int argc, char **argv)
 {
+    (void)argc;
     char *prmt = "cisfun$ ", *buffer, *copy_buf, *token;
     size_t size = 0;
     ssize_t num_of_char;
@@ -50,10 +51,11 @@ int main(int argc, char **argv)
         {
             argv[i] = malloc(sizeof(char) * strlen(token));
             strcpy(argv[i], token);
+            token= strtok(NULL,delim);
             printf("%s", argv[i]);
              
         }
-        printf("%s\n",buffer);
+    
     }
 
     free(buffer);
