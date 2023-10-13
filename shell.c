@@ -42,21 +42,18 @@ int main(int argc, char **argv)
             token = strtok(NULL, delim);
         }
         num_of_token++;
+
         argv = malloc(sizeof(char *) * num_of_token);
+        
         token = strtok(copy_buf, delim);
         for (i = 0; token != NULL; i++)
         {
             argv[i] = malloc(sizeof(char) * strlen(token));
-            if (argv[i] == NULL)
-            {
-                perror("failed to allocate memory\n");
-                return (-1);
-            }
             strcpy(argv[i], token);
             printf("%s", argv[i]);
-           
-           
+             
         }
+        printf("%s\n",buffer);
     }
 
     free(buffer);
