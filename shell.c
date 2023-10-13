@@ -54,7 +54,7 @@ int main(int argc, char **argv)
             }
             strcpy(argv[i], token);
             printf("%s", argv[i]);
-            token = strtok(NULL, delim);
+           
            
         }
     }
