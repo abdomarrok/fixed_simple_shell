@@ -11,13 +11,19 @@
 
 int main(int argc, char **argv)
 {
-  char *prmt = "cisfun$ ", *buffer;
-  size_t size = 0;
+    char *prmt = "cisfun$ ", *buffer;
+    size_t size = 0;
+    while (1)
+    {
+        printf("%s", prmt);
+        ssize_t num_of_char = getline(&buffer, &size, stdin);
+        if (num_of_char==-1){
+            printf("getting out of cisfun$ ...\n");
+            return (-1);
+        }
+        printf("%s\n", buffer);
+    }
 
-  printf("%s", prmt);
-  getline(&buffer, &size, stdin);
-
-  printf("%s\n", buffer);
-  free(buffer);
-  return (0);
+    free(buffer);
+    return (0);
 }
