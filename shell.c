@@ -11,19 +11,48 @@
 
 int main(int argc, char **argv)
 {
-    char *prmt = "cisfun$ ", *buffer;
+    char *prmt = "cisfun$ ", *buffer,*copy_buf,*token;
     size_t size = 0;
+    ssize_t num_of_char;
+    int num_of_token,i;
+    const char *delim="\n" ;
     while (1)
     {
         printf("%s", prmt);
-        ssize_t num_of_char = getline(&buffer, &size, stdin);
+        num_of_char = getline(&buffer, &size, stdin);
         if (num_of_char==-1){
             printf("getting out of cisfun$ ...\n");
             return (-1);
         }
+        copy_buf = malloc(sizeof(char)*num_of_char);
+
+        if(copy_buf=NULL){
+            perror("failed to alloacate memory\n");
+            return(-1);
+        }
+
+        strcpy(copy_buf,buffer);
+        token = strtok(buffer,delim);
+
+        while (token!= NULL)
+        {
+            num_of_token++;
+            token =strtok(NULL,delim);
+        }
+        num_of_token++;
+        argv =malloc(sizeof(char *) * num_of_token);
+        token=strtok(copy_buf,delim);
+        for(i=0;token!= NULL;i++)
+        {
+            argv[i] = malloc(sizeof(char)* strlen(token));
+            strcpy(argv[i],token);
+
+        }
+    
         printf("%s\n", buffer);
     }
 
     free(buffer);
+    free(copy_buf);
     return (0);
 }
