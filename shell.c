@@ -46,6 +46,7 @@ int main(int argc, char **argv)
         {
             argv[i] = malloc(sizeof(char)* strlen(token));
             strcpy(argv[i],token);
+            printf("%s",argv[i]);
 
         }
     
@@ -54,5 +55,7 @@ int main(int argc, char **argv)
 
     free(buffer);
     free(copy_buf);
+    free(argv);
+
     return (0);
 }
