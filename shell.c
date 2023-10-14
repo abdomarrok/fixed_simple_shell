@@ -38,8 +38,9 @@ int main(int argc, char **env)
         j=0;
         while (argument[j])
         {
-           argument[j]=strtok(NULL,delim);
-           j++;
+
+           argument[++j]=strtok(NULL,delim);
+          
         }
         
 
