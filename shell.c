@@ -20,7 +20,6 @@ int main(int argc, char **env)
 
         if (num_of_chars == -1)
         {
-        _printstring("getting out of shell");
         free(buffer);
         exit(0);
         }
