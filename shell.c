@@ -2,10 +2,9 @@
 
 int main(int argc, char **env)
 {
+    char *prmt = "($) ", *buffer = NULL,*delim = " \n";
     (void)argc;
-    char *prmt = "($) ", *buffer = NULL;
-    char *path;
-    char *argument[11], *delim = " \n";
+    char *argument[11],*path;
     size_t bsize;
     ssize_t num_of_chars;
     pid_t child_id;
