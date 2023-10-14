@@ -1,18 +1,18 @@
 #include "shell.h"
 
-char *place(char *path, char *arg)
+char *place(char *path, char *argument)
 {
     char *path2, *path_token, *file_path, *buffer, *delim = ":";
     path2 = strdup(path);
     path_token = strtok(path2, delim);
 
-    file_path = malloc(strlen(arg) + strlen(path_token) + 4);
+    file_path = malloc(strlen(argument) + strlen(path_token) + 4);
 
     while (path_token != NULL)
     {
         strcpy(file_path, path_token);
         strcat(file_path, "/");
-        strcat(file_path, arg);
+        strcat(file_path, argument);
         strcat(file_path, "\0");
         if (access(file_path, X_OK) == 0)
         {
@@ -23,8 +23,8 @@ char *place(char *path, char *arg)
     }
     free(file_path);
     free(path2);
-    /** if(stat(arg,&buffer)==0){
-          return (arg);
+    /** if(stat(argument,&buffer)==0){
+          return (argument);
       }  */
     return (NULL);
 }

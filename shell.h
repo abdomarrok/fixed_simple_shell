@@ -11,7 +11,8 @@
 
 int _putchar(char c);
 int _printstring(char *s);
-char *place(char *path, char *arg);
+char *place(char *path, char *argument);
 char *get_location(char *command);
+int _built_in(char **argument)
 
 #endif

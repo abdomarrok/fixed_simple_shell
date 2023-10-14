@@ -42,10 +42,12 @@ int main(int argc, char **env)
             argument[++j] = strtok(NULL, delim);
         }
         argument[j]=NULL;
-
+       
         path=get_location(argument[0]);
         if(path==NULL){
-            perror("command do not found \n ");
+           if(_built_in(argument)!=0){
+                 perror("command do not found \n ");
+           } 
             continue;
         }
 
