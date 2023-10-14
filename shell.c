@@ -3,8 +3,8 @@
 int main(int argc, char **env)
 {
     (void)argc;
-    char *path;
     char *prmt = "($) ", *buffer = NULL;
+    char *path;
     char *argument[11], *delim = " \n";
     size_t bsize;
     ssize_t num_of_chars;
