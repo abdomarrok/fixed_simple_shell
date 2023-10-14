@@ -4,11 +4,11 @@ int main(int argc, char **env)
 {
     (void)argc;
     char *prmt = "($) ", *buffer = NULL;
-    char *argument[] = {NULL, NULL};
+    char *argument[10] ,*delim = " \n";
     size_t bsize;
     ssize_t num_of_chars;
     pid_t child_id;
-    int status, i;
+    int status, i,j;
 
     while (1)
     {
@@ -33,7 +33,16 @@ int main(int argc, char **env)
             i++;
         }
 
-        argument[0] = strdup(buffer);
+        argument[0] = strtok(buffer,delim);
+
+        j=0;
+        while (argument[j])
+        {
+           argument[j]=strtok(NULL,delim);
+           j++;
+        }
+        
+
         child_id = fork();
 
         if (child_id < 0)
