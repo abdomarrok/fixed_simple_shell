@@ -41,7 +41,7 @@ int main(int argc, char **env)
 
             argument[++j] = strtok(NULL, delim);
         }
-        arg[j]=NULL;
+        argument[j]=NULL;
 
         path=get_location(argument[0]);
         if(path==NULL){

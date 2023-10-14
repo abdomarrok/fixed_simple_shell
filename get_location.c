@@ -16,7 +16,8 @@ char *place(char *path, char *arg)
         strcat(file_path, "\0");
         if (access(file_path, X_OK) == 0)
         {
-            free(path2) return (file_path);
+            free(path2) ;
+            return (file_path);
         }
         path_token = strtok(NULL, delim);
     }
@@ -25,14 +26,14 @@ char *place(char *path, char *arg)
     /** if(stat(arg,&buffer)==0){
           return (arg);
       }  */
-    return (NULL)
+    return (NULL);
 }
 
 char *get_location(char *command)
 {
     char *path;
 
-    path = getenv("PATH")
+    path = getenv("PATH");
 
         if (path)
     {
