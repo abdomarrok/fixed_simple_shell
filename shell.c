@@ -3,11 +3,11 @@
 int main(int argc, char **env)
 {
     char *prmt = "($) ", *buffer = NULL, *delim = " \n", *argument[11], *path;
-    (void)argc;
     size_t bsize;
     ssize_t num_of_chars;
     pid_t child_id;
     int status, i, j;
+    (void)argc;
 
     while (1)
     {
