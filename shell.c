@@ -46,6 +46,7 @@ int main(int argc, char **env)
         path=get_location(argument[0]);
         if(path==NULL){
            if(_built_in(argument)!=0){
+           
               continue;
            } else{
                perror("command do not found \n ");
