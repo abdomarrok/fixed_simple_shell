@@ -3,9 +3,10 @@
 int main(int argc, char **env)
 {
     (void)argc;
-    char *prmt = "($) ", *buffer = NULL,*path;
+    char *path;
+    char *prmt = "($) ", *buffer = NULL;
     char *argument[11], *delim = " \n";
-    size_t bsize; 
+    size_t bsize;
     ssize_t num_of_chars;
     pid_t child_id;
     int status, i, j;
@@ -35,26 +36,27 @@ int main(int argc, char **env)
         j = 0;
         argument[j] = strtok(buffer, delim);
 
-      
         while (argument[j])
         {
 
             argument[++j] = strtok(NULL, delim);
         }
-        argument[j]=NULL;
-       
-        path=get_location(argument[0]);
-        if(path==NULL){
-           if(_built_in(argument)!=0){
-           
-              continue;
-           } else{
-               perror("command do not found \n ");
-                continue;
-           }
-           
-        }
+        argument[j] = NULL;
 
+        path = get_location(argument[0]);
+        if (path == NULL)
+        {
+            if (_built_in(argument) != 0)
+            {
+
+                continue;
+            }
+            else
+            {
+                perror("command do not found \n ");
+                continue;
+            }
+        }
 
         child_id = fork();
 
