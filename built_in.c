@@ -11,7 +11,7 @@ int _built_in(char **argument)
         if (argument[1]==NULL){
             chdir(getenv("HOME"));
         }else{
-            chdir(arg[1]);
+            chdir(argument[1]);
         }
     }
     return(0);
