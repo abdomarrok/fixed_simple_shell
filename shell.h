@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/wait.h>
-#include <string.h>>
+#include <waitpkgintrin.h>
+#include <string.h>
 
 
 int _putchar(char c);
