@@ -3,25 +3,24 @@
 int main(int argc, char **env)
 {
     (void)argc;
-    char *prmt = "($) ", *buffer = NULL;
-    char *argument[10] ,*delim = " \n";
-    size_t bsize;
+    char *prmt = "($) ", *buffer = NULL,*path;
+    char *argument[11], *delim = " \n";
+    size_t bsize; 
     ssize_t num_of_chars;
     pid_t child_id;
-    int status, i,j;
+    int status, i, j;
 
     while (1)
     {
-        if(isatty(0))
+        if (isatty(0))
             _printstring(prmt);
-        
 
         num_of_chars = getline(&buffer, &bsize, stdin);
 
         if (num_of_chars == -1)
         {
-        free(buffer);
-        exit(0);
+            free(buffer);
+            exit(0);
         }
         i = 0;
         while (buffer[i])
@@ -33,16 +32,23 @@ int main(int argc, char **env)
             i++;
         }
 
-        argument[0] = strtok(buffer,delim);
+        j = 0;
+        argument[j] = strtok(buffer, delim);
 
-        j=0;
+      
         while (argument[j])
         {
 
-           argument[++j]=strtok(NULL,delim);
-          
+            argument[++j] = strtok(NULL, delim);
         }
-        
+        arg[j]=NULL;
+
+        path=get_location(argument[0]);
+        if(path==NULL){
+            perror("command do not found \n ");
+            continue;
+        }
+
 
         child_id = fork();
 
@@ -54,9 +60,9 @@ int main(int argc, char **env)
         }
         else if (child_id == 0)
         {
-            if (execve(argument[0], argument, env) == -1)
+            if (execve(path, argument, env) == -1)
             {
-                _printstring("command do not exist \n ");
+                perror("command do not exist \n ");
             };
         }
         else
