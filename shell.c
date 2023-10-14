@@ -13,12 +13,14 @@ int main(int argc, char **env)
     while (1)
     {
         _printstring(prmt);
+
         num_of_chars = getline(&buffer, &bsize, stdin);
+
         if (num_of_chars == -1)
         {
-            _printstring("getting out of shell");
-            free(buffer);
-           exit(0);
+        _printstring("getting out of shell");
+        free(buffer);
+        exit(0);
         }
         i = 0;
         while (buffer[i])
@@ -26,13 +28,13 @@ int main(int argc, char **env)
             if (buffer[i] == '\n')
             {
                 buffer[i] = 0;
-                i++;
             }
+            i++;
         }
 
         argument[0] = strdup(buffer);
         child_id = fork();
-        
+
         if (child_id < 0)
         {
             perror("fork error");
@@ -50,7 +52,6 @@ int main(int argc, char **env)
         {
             wait(&status);
         }
-        /* _printstring(buffer);*/
     }
 
     free(buffer);
