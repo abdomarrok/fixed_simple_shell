@@ -16,16 +16,13 @@ char *place(char *path, char *argument)
         strcat(file_path, "\0");
         if (access(file_path, X_OK) == 0)
         {
-            free(path2) ;
             return (file_path);
         }
         path_token = strtok(NULL, delim);
     }
     free(file_path);
     free(path2);
-    /** if(stat(argument,&buffer)==0){
-          return (argument);
-      }  */
+   
     return (NULL);
 }
 
