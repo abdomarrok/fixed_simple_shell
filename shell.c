@@ -12,7 +12,9 @@ int main(int argc, char **env)
 
     while (1)
     {
-        _printstring(prmt);
+        if(isatty(0))
+            _printstring(prmt);
+        
 
         num_of_chars = getline(&buffer, &bsize, stdin);
 
