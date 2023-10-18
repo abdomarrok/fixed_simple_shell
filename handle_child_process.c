@@ -1,7 +1,8 @@
 #include "shell.h"
 
 /**
- * handle_child_process - Function to handle child processes and execute commands
+ * handle_child_process - Function to handle child processes 
+ * and execute commands
  * @path: The path to the command to execute
  * @argument: An array of arguments for the command
  */
