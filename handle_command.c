@@ -26,5 +26,5 @@ char *path;
 		}
 	}
 
-	handle_child_process(path, argument);
+	handle_child_process(path, argument,buffer, env);
 }
