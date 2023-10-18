@@ -5,28 +5,26 @@
  *
  * Return: The string entered by the user.
  */
-char *_get_line(void)
+char *_get_line(*buffer, *bsize)
 {
-    static char buffer[1024];
     static int buf_pos = 0;
-    static int buf_size = 0;
     char *input_str = NULL;
     int input_len = 0;
     char current_char;
 
     while (1)
     {
-        if (buf_pos >= buf_size)
+        if (buf_pos >= bsize)
         {
-            buf_size = read(STDIN_FILENO, buffer, 1024);
+            bsize = read(STDIN_FILENO, buffer, 1024);
             buf_pos = 0;
-            if (buf_size == 0)
+            if (bsize == 0)
             {
                 if (input_str != NULL)
                     input_str[input_len] = '\0';
                 return input_str;
             }
-            else if (buf_size < 0)
+            else if (bsize < 0)
             {
                 perror("read");
                 free(input_str);  /* Free memory before returning NULL*/
