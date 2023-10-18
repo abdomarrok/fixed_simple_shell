@@ -16,7 +16,7 @@ if (argument[1] != NULL)
 {
 int status = atoi(argument[1]);
 _printstring("Exiting shell with status: ");
-_printstring((char*)status);
+_printstring(status);
 _printstring("\n");
 exit(status);
 }
