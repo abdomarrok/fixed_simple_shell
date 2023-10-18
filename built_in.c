@@ -9,6 +9,10 @@
  */
 int _built_in(char **argument, char **env)
 {
+	int pipe_fd[2];
+    pid_t child_id;
+	char buffer[1024];
+    ssize_t n;
     if (strcmp(argument[0], "exit") == 0)
     {
         _printstring("exit the shell\n");
@@ -28,8 +32,7 @@ int _built_in(char **argument, char **env)
     }
     else if (strcmp(argument[0], "env") == 0)
     {
-        int pipe_fd[2];
-        pid_t child_id;
+        
 
         if (pipe(pipe_fd) == -1)
         {
@@ -46,28 +49,22 @@ int _built_in(char **argument, char **env)
         }
         else if (child_id == 0)
         {
-            // Child process - Redirect stdout to the write end of the pipe
             close(pipe_fd[0]);
             dup2(pipe_fd[1], STDOUT_FILENO);
             close(pipe_fd[1]);
-            _print_env(env);
+            _printstring(env);
             exit(0);
         }
         else
         {
-            // Parent process - Close the write end of the pipe
             close(pipe_fd[1]);
-
-            char buffer[1024];
-            ssize_t n;
-
-            // Read and print the output of the "env" command from the pipe
+           
             while ((n = read(pipe_fd[0], buffer, sizeof(buffer))) > 0)
             {
                 write(STDOUT_FILENO, buffer, n);
             }
 
-            close(pipe_fd[0]); // Close the read end of the pipe
+            close(pipe_fd[0]); /
             wait(NULL);
         }
         return (1);
