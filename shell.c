@@ -1,13 +1,22 @@
 #include "shell.h"
 
+/**
+ * main - Entry point of the shell program
+ *
+ * Description: This function serves as the entry point for the custom shell.
+ * It continuously prompts the user for input and processes shell commands.
+ *
+ * Return: Always returns 0.
+ */
+
 int main(int argc, char **env)
 {
-	(void)argc;
+(void)argc;
     
-	while (1)
-	{
-		handle_shell_prompt();
-	}
+    while (1)
+    {
+        handle_shell_prompt();
+    }
 
-	return (0);
+    return (0);
 }
