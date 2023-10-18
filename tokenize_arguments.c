@@ -7,12 +7,12 @@
  */
 void tokenize_arguments(char *buffer, char **argument)
 {
-    int j = 0;
-    char *delim = " \n";
-    argument[j] = strtok(buffer, delim);
-    while (argument[j])
-    {
-        argument[++j] = strtok(NULL, delim);
-    }
-    argument[j] = NULL;
+	int j = 0;
+	char *delim = " \n";
+	argument[j] = strtok(buffer, delim);
+	while (argument[j])
+	{
+		argument[++j] = strtok(NULL, delim);
+	}
+	argument[j] = NULL;
 }
