@@ -12,8 +12,19 @@ int _built_in(char **argument, char **env)
 (void)env;
 if (strcmp(argument[0], "exit") == 0)
 {
+if (argument[1] != NULL)
+{
+int status = atoi(argument[1]);
+_printstring("Exiting shell with status: ");
+_printint(status);
+_printstring("\n");
+exit(status);
+}
+else
+{
 _printstring("exit the shell\n");
 exit(0);
+}
 }
 else if (strcmp(argument[0], "cd") == 0)
 {
