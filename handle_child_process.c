@@ -26,6 +26,7 @@ void handle_child_process(char *path, char **argument, char *buffer, char **env)
         if (execve(path, argument, env) == -1)
         {
             perror("command does not exist\n");
+            exit(1);
         }
     }
     else
@@ -33,4 +34,3 @@ void handle_child_process(char *path, char **argument, char *buffer, char **env)
         wait(&status);
     }
 }
-
