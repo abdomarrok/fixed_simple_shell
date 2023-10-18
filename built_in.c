@@ -6,7 +6,7 @@
  *
  * Return: 1 if a built-in command is found, 0 otherwise.
  */
-int _built_in(char **argument)
+int _built_in(char **argument,char **env)
 {
 	if (strcmp(argument[0], "exit") == 0)
 	{
@@ -27,7 +27,6 @@ int _built_in(char **argument)
 	}
 	else if (strcmp(argument[0], "env") == 0)
     {
-        char **env = environ;
         while (*env)
         {
             _printstring(*env);
