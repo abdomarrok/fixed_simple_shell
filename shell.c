@@ -3,6 +3,9 @@
 /**
  * main - Entry point of the shell program
  *
+ * @argc: The number of command-line arguments.
+ * @env: The array of environment variables.
+ *
  * Description: This function serves as the entry point for the custom shell.
  * It continuously prompts the user for input and processes shell commands.
  *
@@ -11,6 +14,7 @@
 
 int main(int argc, char **env)
 {
+  
 (void)argc;
     
     while (1)
