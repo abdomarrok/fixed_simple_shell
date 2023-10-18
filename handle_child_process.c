@@ -7,10 +7,9 @@
  * @buffer: The input buffer
  * @env: The array of environment variables
  */
-
 void handle_child_process(char *path, char **argument, char *buffer,
  char **env)
- {
+{
     pid_t child_id;
     int status;
 
@@ -18,9 +17,9 @@ void handle_child_process(char *path, char **argument, char *buffer,
 
     if (child_id < 0)
     {
-    perror("fork error");
-    if (buffer != NULL)
-        free(buffer);
+        perror("fork error");
+        if (buffer != NULL)
+            free(buffer);
         exit(0);
     }
     else if (child_id == 0)
