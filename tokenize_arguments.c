@@ -21,12 +21,12 @@ if (!in_word)
 arg_start = buffer;
 in_word = 1;
 }
-
-} else
+}
+else
 {
 if (in_word)
 {
-*buffer = '\0';  
+*buffer = '\0';
 argument[j++] = arg_start;
 in_word = 0;
 }
