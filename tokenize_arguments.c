@@ -11,16 +11,18 @@ int j = 0;
 int in_word = 0;
 char *arg_start = buffer;
 
-while (*buffer) 
+while (*buffer)
 {
-if (!is_delimiter(*buffer, " \n")) 
+if (!is_delimiter(*buffer, " \n"))
 {
+
 if (!in_word)
 {
 arg_start = buffer;
 in_word = 1;
 }
-}else
+
+} else
 {
 if (in_word)
 {
@@ -36,5 +38,5 @@ if (in_word)
 argument[j] = arg_start;
 j++;
 }
-argument[j] = NULL; 
+argument[j] = NULL;
 }
