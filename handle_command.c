@@ -4,7 +4,7 @@
  * handle_command - Function to handle command execution
  * @buffer: The input command buffer
  * @argument: An array of arguments for the command
- * @env: the evirment 
+ * @env: the evirment
  */
 void handle_command(char *buffer, char **argument, char **env)
 {
