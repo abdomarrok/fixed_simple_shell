@@ -9,6 +9,7 @@
  */
 int _built_in(char **argument, char **env)
 {
+int i = 0;
 	if (strcmp(argument[0], "exit") == 0)
 	{
 		_printstring("exit the shell\n");
@@ -28,11 +29,11 @@ int _built_in(char **argument, char **env)
 	}
 	else if (strcmp(argument[0], "env") == 0)
 	{
-		while (*env)
+		while (env[i] != NULL)
 		{
-			_printstring(*env);
+			_printstring(env[i]);
 			_printstring("\n");
-			env++;
+			i++;
 		}
 		return (1);
 	}
