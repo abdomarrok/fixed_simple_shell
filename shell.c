@@ -14,9 +14,7 @@
 
 int main(int argc, char **env)
 {
-  
-(void)argc;
-    
+(void)argc; 
     while (1)
     {
         handle_shell_prompt();
