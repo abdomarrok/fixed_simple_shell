@@ -17,5 +17,7 @@ int _built_in(char **argument);
 void handle_shell_prompt(void);
 void handle_command(char *buffer, char **argument);
 void handle_child_process(char *path, char **argument);
+void remove_newline(char *str)
+void tokenize_arguments(char *buffer, char **argument)
 
 #endif
