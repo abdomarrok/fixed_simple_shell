@@ -13,12 +13,12 @@
  */
 int main(int argc, char **env)
 {
-    (void)argc;
-    
-    while (1)
-    {
-        handle_shell_prompt();
-    }
+	(void)argc;
+	
+	while (1)
+	{
+		handle_shell_prompt();
+	}
 
-    return (0);
+	return (0);
 }
