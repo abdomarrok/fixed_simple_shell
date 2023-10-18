@@ -9,6 +9,7 @@
  */
 int _built_in(char **argument, char **env)
 {
+(void)env;
 if (strcmp(argument[0], "exit") == 0)
 {
 _printstring("exit the shell\n");
