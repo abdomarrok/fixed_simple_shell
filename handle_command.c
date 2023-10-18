@@ -16,7 +16,7 @@ char *path;
 
 	if (path == NULL)
 	{
-		if (_built_in(argument,env) != 0)
+		if (_built_in(argument, env) != 0)
 		{
 			return;
 		}
