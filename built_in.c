@@ -3,6 +3,7 @@
 /**
  * _built_in - Check for built-in shell commands.
  * @argument: An array of command arguments.
+ * @env: The array of environment variables.
  *
  * Return: 1 if a built-in command is found, 0 otherwise.
  */
@@ -26,14 +27,14 @@ int _built_in(char **argument, char **env)
 		return (1);
 	}
 	else if (strcmp(argument[0], "env") == 0)
-    {
-    	while (*env)
-        	{
-            	_printstring(*env);
-            	_printstring("\n");
-            	env++;
-       		}
-    return (1);
-    }
+	{
+		while (*env)
+		{
+			_printstring(*env);
+			_printstring("\n");
+			env++;
+		}
+		return (1);
+	}
 	return (0);
 }
