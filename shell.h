@@ -19,6 +19,7 @@ void handle_command(char *buffer, char **argument, char **env);
 void handle_child_process(char *path, char **argument, char *buffer,
 char **env);
 void remove_newline(char *str);
+int is_delimiter(char c, const char *delim);
 void tokenize_arguments(char *buffer, char **argument);
 
 #endif
