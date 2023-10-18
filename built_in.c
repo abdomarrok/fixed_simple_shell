@@ -16,16 +16,16 @@ if (strcmp(argument[0], "exit") == 0)
 }
 else if (strcmp(argument[0], "cd") == 0)
 {
-    if (argument[1] == NULL)
-        {
-            chdir(getenv("HOME"));
-        }
-    else
-        {
-            chdir(argument[1]);
-        }
-        return (1);
-    }
+if (argument[1] == NULL)
+{
+    chdir(getenv("HOME"));
+}
+else
+{
+    chdir(argument[1]);
+}
+return (1);
+}
 return (0);
 }
 
