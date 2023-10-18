@@ -7,7 +7,7 @@
  * @buffer: The input buffer
  * @env: The array of environment variables
  */
-void handle_child_process(char *path, char **argument, char *buffer, 
+void handle_child_process(char *path, char **argument, char *buffer,
 char **env)
 {
 pid_t child_id;
