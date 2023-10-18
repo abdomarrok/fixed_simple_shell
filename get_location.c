@@ -1,5 +1,12 @@
 #include "shell.h"
 
+/**
+ * place - Search for a command in directories listed in PATH.
+ * @path: The PATH environment variable.
+ * @argument: The command to find.
+ *
+ * Return: The full path to the command if found, otherwise NULL.
+ */
 char *place(char *path, char *argument)
 {
     char *path2, *path_token, *file_path, *delim = ":";
@@ -22,17 +29,23 @@ char *place(char *path, char *argument)
     }
     free(file_path);
     free(path2);
-   
+
     return (NULL);
 }
 
+/**
+ * get_location - Get the full path to a command by searching PATH.
+ * @command: The command to find.
+ *
+ * Return: The full path to the command if found, otherwise NULL.
+ */
 char *get_location(char *command)
 {
     char *path;
 
     path = getenv("PATH");
 
-        if (path)
+    if (path)
     {
         path = place(path, command);
         return (path);
