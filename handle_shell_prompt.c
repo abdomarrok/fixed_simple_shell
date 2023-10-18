@@ -3,7 +3,7 @@
 /**
  * handle_shell_prompt - Function to handle the shell prompt
  */
-void handle_shell_prompt(void)
+void handle_shell_prompt(char **env)
 {
 	char *prmt = "($) ";
 	char *buffer = NULL;
@@ -22,5 +22,5 @@ void handle_shell_prompt(void)
 		exit(0);
 	}
 
-	handle_command(buffer, argument);
+	handle_command(buffer, argument,env);
 }

@@ -5,7 +5,7 @@
  * @buffer: The input command buffer
  * @argument: An array of arguments for the command
  */
-void handle_command(char *buffer, char **argument)
+void handle_command(char *buffer, char **argument,char **env)
 {
 char *path;
 
