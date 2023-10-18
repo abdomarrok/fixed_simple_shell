@@ -14,7 +14,6 @@
 int main(int argc, char **env)
 {
 	(void)argc;
-	(void)env;
 
 	while (1)
 	{
