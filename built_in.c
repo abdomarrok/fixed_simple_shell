@@ -30,44 +30,6 @@ int _built_in(char **argument, char **env)
         }
         return (1);
     }
-    else if (strcmp(argument[0], "env") == 0)
-    {
-        
-
-        if (pipe(pipe_fd) == -1)
-        {
-            perror("pipe error");
-            return (0);
-        }
-
-        child_id = fork();
-
-        if (child_id < 0)
-        {
-            perror("fork error");
-            return (0);
-        }
-        else if (child_id == 0)
-        {
-            close(pipe_fd[0]);
-            dup2(pipe_fd[1], STDOUT_FILENO);
-            close(pipe_fd[1]);
-            _printstring(*env);
-            exit(0);
-        }
-        else
-        {
-            close(pipe_fd[1]);
-           
-            while ((n = read(pipe_fd[0], buffer, sizeof(buffer))) > 0)
-            {
-                write(STDOUT_FILENO, buffer, n);
-            }
-
-            close(pipe_fd[0]); 
-            wait(NULL);
-        }
-        return (1);
-    }
     return (0);
 }
+
