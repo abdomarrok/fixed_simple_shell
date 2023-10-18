@@ -20,5 +20,6 @@ void handle_child_process(char *path, char **argument, char *buffer,
 char **env);
 void remove_newline(char *str);
 void tokenize_arguments(char *buffer, char **argument);
+char *_get_line(void);
 
 #endif

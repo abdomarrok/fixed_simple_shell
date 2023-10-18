@@ -15,7 +15,7 @@ void handle_shell_prompt(char **env)
 	if (isatty(0))
 		_printstring(prmt);
 
-	num_of_chars = getline(&buffer, &bsize, stdin);
+	num_of_chars = _getline(&buffer, &bsize, stdin);
 
 	if (num_of_chars == -1)
 	{
