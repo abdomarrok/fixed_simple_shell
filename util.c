@@ -19,8 +19,8 @@ int _putchar(char c)
  */
 int _printstring(char *s)
 {
-	int i = 0, c = 0;
-    
+int i = 0, c = 0;
+
 	while (s[i])
 	{
 		c += _putchar(s[i++]);
