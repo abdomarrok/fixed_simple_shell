@@ -2,108 +2,91 @@
 
 int main(int argc, char **env)
 {
-    
-    char *prmt = "($) ", *buffer = NULL, *delim = " \n", *argument[11], *path;
+	char *prmt = "($) ";
+	char *buffer = NULL;
+	char *delim = " \n";
+	char *argument[11];
+	char *path;
 
-    size_t bsize;
-    
-    ssize_t num_of_chars;
-    
-    pid_t child_id;
-    
-    int status, i, j;
-    
-    (void)argc;
+	size_t bsize;
+	ssize_t num_of_chars;
+	pid_t child_id;
+	int status, i, j;
 
-    while (1)
-      {
-          if (isatty(0))
-            _printstring(prmt);
+	(void)argc;
 
-          num_of_chars = getline(&buffer, &bsize, stdin);
+	while (1)
+	{
+		if (isatty(0))
+			_printstring(prmt);
 
-          if (num_of_chars == -1)
-              {
+		num_of_chars = getline(&buffer, &bsize, stdin);
 
-                free(buffer);
-                exit(0);
+		if (num_of_chars == -1)
+		{
+			free(buffer);
+			exit(0);
+		}
 
-              }
+		i = 0;
 
-          i = 0;
+		while (buffer[i])
+		{
+			if (buffer[i] == '\n')
+			{
+				buffer[i] = 0;
+			}
+			i++;
+		}
 
-          while (buffer[i])
-              {
-                  if (buffer[i] == '\n')
-                      {
-                        buffer[i] = 0;
-                      }
+		j = 0;
 
-                i++;
+		argument[j] = strtok(buffer, delim);
 
-                }
+		while (argument[j] && j < 10)
+		{
+			argument[++j] = strtok(NULL, delim);
+		}
 
-          j = 0;
+		argument[j] = NULL;
 
-          argument[j] = strtok(buffer, delim);
+		path = get_location(argument[0]);
 
-          while (argument[j])
-              {
+		if (path == NULL)
+		{
+			if (_built_in(argument) != 0)
+			{
+				continue;
+			}
+			else
+			{
+				perror("command not found\n");
+				continue;
+			}
+		}
 
-                  argument[++j] = strtok(NULL, delim);
-              
-              }
-          argument[j] = NULL;
+		child_id = fork();
 
-          path = get_location(argument[0]);
+		if (child_id < 0)
+		{
+			perror("fork error");
+			free(buffer);
+			exit(0);
+		}
+		else if (child_id == 0)
+		{
+			if (execve(path, argument, env) == -1)
+			{
+				perror("command does not exist\n");
+			}
+		}
+		else
+		{
+			wait(&status);
+		}
+	}
 
-          if (path == NULL)
-              {
-                if (_built_in(argument) != 0)
-                    {
+	free(buffer);
 
-                continue;
-
-                    }
-                else
-                    {
-                
-                perror("command do not found \n ");
-                
-                continue;
-                    }
-                }
-
-          child_id = fork();
-
-          if (child_id < 0)
-              {
-
-            perror("fork error");
-            
-            free(buffer);
-            
-            exit(0);
-        
-              }
-          else if (child_id == 0)
-              {
-
-                  if (execve(path, argument, env) == -1)
-                      {
-                          perror("command do not exist \n ");
-                      };
-        
-              }
-                  else
-              {
-            wait(&status);
-              }
-              
-      }
-
-    free(buffer);
-
-    return (0);
-
+	return (0);
 }
