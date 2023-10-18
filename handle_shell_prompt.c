@@ -2,6 +2,7 @@
 
 /**
  * handle_shell_prompt - Function to handle the shell prompt
+ * @env: the evirment
  */
 void handle_shell_prompt(char **env)
 {
@@ -22,5 +23,5 @@ void handle_shell_prompt(char **env)
 		exit(0);
 	}
 
-	handle_command(buffer, argument,env);
+	handle_command(buffer, argument, env);
 }

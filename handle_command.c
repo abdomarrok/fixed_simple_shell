@@ -4,8 +4,9 @@
  * handle_command - Function to handle command execution
  * @buffer: The input command buffer
  * @argument: An array of arguments for the command
+ * @env: the evirment 
  */
-void handle_command(char *buffer, char **argument,char **env)
+void handle_command(char *buffer, char **argument, char **env)
 {
 char *path;
 
@@ -26,5 +27,5 @@ char *path;
 		}
 	}
 
-	handle_child_process(path, argument,buffer, env);
+	handle_child_process(path, argument, buffer, env);
 }
