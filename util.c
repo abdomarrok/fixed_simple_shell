@@ -8,7 +8,7 @@
  */
 int _putchar(char c)
 {
-    return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 /**
@@ -19,10 +19,10 @@ int _putchar(char c)
  */
 int _printstring(char *s)
 {
-    int i = 0, c = 0;
-    while (s[i])
-    {
-        c += _putchar(s[i++]);
-    }
-    return (c);
+	int i = 0, c = 0;
+	while (s[i])
+	{
+		c += _putchar(s[i++]);
+	}
+	return (c);
 }
