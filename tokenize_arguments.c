@@ -7,8 +7,9 @@
  */
 void tokenize_arguments(char *buffer, char **argument)
 {
-	int j = 0;
-	char *delim = " \n";
+int j = 0;
+char *delim = " \n";
+
 	argument[j] = strtok(buffer, delim);
 	while (argument[j])
 	{
