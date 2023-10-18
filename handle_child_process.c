@@ -24,25 +24,11 @@ int status;
 	}
 	else if (child_id == 0)
 	{
-	char *token = strtok(path, ":");
-
-		while (token != NULL)
-        {
-        char executable_path[1024]; 
-            snprintf(executable_path, sizeof(executable_path), "%s/%s", token, path);
-
-            if (access(executable_path, X_OK) == 0)
-            {
-                /*Execute the command if found*/
-                execve(executable_path, argument, env);
-            }
-
-            token = strtok(NULL, ":");
-        }
-
-        /* If the command is not found, print an error message*/
-        perror("command not found");
-        exit(1);
+		if (execve(path, argument, env) == -1)
+		{
+			perror("command does not exist\n");
+			exit(1);
+		}
 	}
 	else
 	{
