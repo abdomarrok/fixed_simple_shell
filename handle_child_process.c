@@ -4,10 +4,12 @@
  * handle_child_process - Function to handle child processes and execute commands
  * @path: The path to the command to execute
  * @argument: An array of arguments for the command
- * @buffer: The input buffer (if needed)
- * @env: The array of environment variables (if needed)
+ * @buffer: The input buffer
+ * @env: The array of environment variables
  */
-void handle_child_process(char *path, char **argument, char *buffer, char **env)
+
+void handle_child_process(char *path, char **argument, char *buffer,
+ char **env)
 {
     pid_t child_id;
     int status;
