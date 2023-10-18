@@ -25,6 +25,7 @@ char *path;
 			perror("command not found\n");
 			return;
 		}
+		exit(0);
 	}
 
 	handle_child_process(path, argument, buffer, env);
