@@ -25,5 +25,16 @@ int _built_in(char **argument)
 		}
 		return (1);
 	}
+	else if (strcmp(argument[0], "env") == 0)
+    {
+        char **env = environ;
+        while (*env)
+        {
+            _printstring(*env);
+            _printstring("\n");
+            env++;
+        }
+        return (1);
+    }
 	return (0);
 }
