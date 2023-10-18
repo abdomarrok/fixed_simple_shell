@@ -7,11 +7,14 @@
  *
  * Return: 1 if the character is a delimiter, 0 otherwise
  */
-int is_delimiter(char c, const char *delim) {
-    while (*delim) {
-        if (c == *delim)
-            return 1;
-        delim++;
-    }
-    return 0;
+int is_delimiter(char c, const char *delim) 
+{
+while (*delim) 
+{
+if (c == *delim)
+return 1;
+delim++;
 }
+return (0);
+}
+
