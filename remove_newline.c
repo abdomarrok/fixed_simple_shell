@@ -6,7 +6,8 @@
  */
 void remove_newline(char *str)
 {
-	int i = 0;
+int i = 0;
+
 	while (str[i])
 	{
 		if (str[i] == '\n')
