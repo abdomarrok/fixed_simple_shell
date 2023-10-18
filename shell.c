@@ -2,16 +2,12 @@
 
 int main(int argc, char **env)
 {
-    (void)argc;
+	(void)argc;
     
-    while (1)
-    {
-        handle_shell_prompt();
-    }
+	while (1)
+	{
+		handle_shell_prompt();
+	}
 
-    return (0);
+	return (0);
 }
-
-
-
-

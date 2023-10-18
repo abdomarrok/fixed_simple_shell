@@ -14,7 +14,7 @@ int _printstring(char *s);
 char *place(char *path, char *argument);
 char *get_location(char *command);
 int _built_in(char **argument);
-void handle_shell_prompt();
+void handle_shell_prompt(void);
 void handle_command(char *buffer, char **argument);
 void handle_child_process(char *path, char **argument);
 

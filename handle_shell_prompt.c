@@ -1,6 +1,9 @@
 #include "shell.h"
 
-void handle_shell_prompt()
+/**
+ * handle_shell_prompt - Function to handle the shell prompt
+ */
+void handle_shell_prompt(void)
 {
     char *prmt = "($) ";
     char *buffer = NULL;
