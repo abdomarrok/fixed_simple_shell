@@ -8,17 +8,19 @@
 void tokenize_arguments(char *buffer, char **argument)
 {
 int j = 0;
-int in_word = 0; 
-char *arg_start = buffer; 
+int in_word = 0;
+char *arg_start = buffer;
 
-while (*buffer) {
-if (!is_delimiter(*buffer, " \n")) {
+while (*buffer) 
+{
+if (!is_delimiter(*buffer, " \n")) 
+{
 if (!in_word)
 {
-arg_start = buffer;  
+arg_start = buffer;
 in_word = 1;
 }
-} else 
+}else
 {
 if (in_word)
 {
@@ -29,8 +31,9 @@ in_word = 0;
 }
 buffer++;
 }
-if (in_word) {
-argument[j] = arg_start; 
+if (in_word)
+{
+argument[j] = arg_start;
 j++;
 }
 argument[j] = NULL; 
