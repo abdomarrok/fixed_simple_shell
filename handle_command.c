@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * handle_command - Function to handle command execution
+ * handle_command - Function to handle cmd execution
  * @buffer: The input command buffer
  * @argument: An array of arguments for the command
  */
