@@ -15,8 +15,10 @@ if (strcmp(argument[0], "exit") == 0)
 if (argument[1] != NULL)
 {
 int status = atoi(argument[1]);
+char cstatus = (char)status;
+
 _printstring("Exiting shell with status: ");
-_printstring(char(status));
+_printstring(cstatus);
 _printstring("\n");
 exit(status);
 }
