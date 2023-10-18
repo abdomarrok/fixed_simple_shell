@@ -52,7 +52,7 @@ int _built_in(char **argument, char **env)
             close(pipe_fd[0]);
             dup2(pipe_fd[1], STDOUT_FILENO);
             close(pipe_fd[1]);
-            _printstring(env);
+            _printstring(*env);
             exit(0);
         }
         else
@@ -64,7 +64,7 @@ int _built_in(char **argument, char **env)
                 write(STDOUT_FILENO, buffer, n);
             }
 
-            close(pipe_fd[0]); /
+            close(pipe_fd[0]); 
             wait(NULL);
         }
         return (1);
