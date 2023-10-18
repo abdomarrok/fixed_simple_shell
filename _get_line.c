@@ -5,7 +5,7 @@
  *
  * Return: The string entered by the user.
  */
-char *_get_line(char *buffer, char *bsize)
+char *_get_line(char *buffer, size_t *bsize)
 {
     static int buf_pos = 0;
     char *input_str = NULL;
