@@ -8,6 +8,7 @@
 void handle_command(char *buffer, char **argument)
 {
 	char *path;
+    
 	remove_newline(buffer);
 	tokenize_arguments(buffer, argument);
 	path = get_location(argument[0]);
