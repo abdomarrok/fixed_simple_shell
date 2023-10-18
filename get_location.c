@@ -9,8 +9,8 @@
  */
 char *place(char *path, char *argument)
 {
-	char *path2, *path_token, *file_path, *delim = ":";
-    
+char *path2, *path_token, *file_path, *delim = ":";
+
 	path2 = strdup(path);
 	path_token = strtok(path2, delim);
 
