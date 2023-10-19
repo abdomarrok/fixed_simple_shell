@@ -12,7 +12,7 @@ char **get_input(void)
     char **args = NULL;
     
 
-    write(STDOUT_FILENO, "$ ", 2);
+    write(STDOUT_FILENO, "($)  ", 2);
 
     response = read_user_input(&input, &len);
 
