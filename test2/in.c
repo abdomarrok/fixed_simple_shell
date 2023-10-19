@@ -8,7 +8,7 @@
  */
 ssize_t read_user_input(char **input, size_t *len)
 {
-    return _getline(input, len, stdin);
+    return get_line(input, len, stdin);
 }
 
 /**
