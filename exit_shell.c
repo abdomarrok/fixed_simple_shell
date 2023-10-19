@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * Handle the exit command for the shell.
+ * exit_shell - Handle the exit command for the shell.
  * @args: Array of arguments, where args[1] is the exit status (optional).
  *
- * This function handles the exit command for the shell. It can optionally
+ * Description: This function handles the exit command for the shell. It can optionally
  * take an exit status as an argument.
  */
 void exit_shell(char **args)

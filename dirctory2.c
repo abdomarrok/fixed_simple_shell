@@ -31,8 +31,8 @@ return (0);
 int update_directory_env_variables(const char *old_directory,
 const char *new_directory)
 {
-    if (setenv("OLDPWD", old_directory, 1) != 0 ||
-setenv("PWD", new_directory, 1) != 0)
+if (setenv("OLDPWD", old_directory, 1) != 0 ||setenv("PWD",
+new_directory, 1) != 0)
 {
 perror("setenv");
 return (-1);

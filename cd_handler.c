@@ -5,7 +5,7 @@
  * @args: Array of arguments, where args[1] is the target directory.
  *
  * changing the current working directory based on the
- * arguments passed. If args[1] is NULL or "~," it changes to the home directory.
+ * If args[1] is NULL or "~," it changes to the home directory.
  * If args[1] is "-", it changes to the previous directory.
  *
  * Return: 0 on success, -1 on failure.

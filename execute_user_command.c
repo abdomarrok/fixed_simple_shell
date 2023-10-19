@@ -1,10 +1,12 @@
 #include "shell.h"
 
 /**
- * Execute a user command based on the first argument.
+ * execute_user_command - Execute a user command based on the first argument.
  * @args: Array of command and arguments.
  *
- * This function executes a user command based on the first argument.
+ * Description: This function executes a user command based on the first argument.
+ * It checks the first argument and determines which built-in function or external
+ * command to execute accordingly.
  */
 void execute_user_command(char **args)
 {

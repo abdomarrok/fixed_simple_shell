@@ -3,6 +3,8 @@
 /**
  * Modify or set an environment variable.
  * @args: An array containing the command and arguments.
+ *
+ * This function is used to modify or set an environment variable.
  */
 void updateEnvironmentVariable(char **args)
 {
