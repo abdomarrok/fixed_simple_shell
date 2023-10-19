@@ -8,7 +8,7 @@
  */
 ssize_t read_user_input(char **input, size_t *len)
 {
-    return get_line(input, len, stdin);
+return get_line(input, len, stdin);
 }
 
 /**
@@ -18,18 +18,18 @@ ssize_t read_user_input(char **input, size_t *len)
  */
 char **parse_input(char *input)
 {
-    char *token = NULL;
-    char **args = NULL;
-    size_t arg_count = 0;
+char *token = NULL;
+char **args = NULL;
+size_t arg_count = 0;
 
-    token = _strtok(input, " \n");
-    while (token != NULL)
-    {
-        args = add_argument(args, token, &arg_count);
-        token = _strtok(NULL, " \n");
-    }
-
-    return args;
+token = _strtok(input, " \n");
+while (token != NULL)
+{
+args = add_argument(args, token, &arg_count);
+token = _strtok(NULL, " \n");
 }
+return args;
+}
+
 
 

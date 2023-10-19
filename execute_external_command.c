@@ -11,7 +11,7 @@ int execute_external_command(char **args)
 	if (child == -1)
 	{
 		perror("problem");
-		return -1;
+		return (-1);
 	}
 	else if (child == 0)
 	{
@@ -29,6 +29,6 @@ int execute_external_command(char **args)
 			exit_status = (status >> 8) & 0xff;
 		else
 			exit_status = -1;
-		return exit_status;
+		return (exit_status);
 	}
 }

@@ -4,22 +4,22 @@
  * Handle changing to the previous directory.
  * Return: 0 on success, -1 on failure.
  */
-int handle_previous_directory()
+int handle_previous_directory(void)
 {
-    char *old_directory = getenv("OLDPWD");
+char *old_directory = getenv("OLDPWD");
 
-    if (old_directory != NULL)
-    {
-        if (change_directory(old_directory) == -1)
-            return -1;
-    }
-    else
-    {
-        write(STDERR_FILENO, "OLDPWD environment variable not set\n", 37);
-        return -1;
-    }
+if (old_directory != NULL)
+{
+if (change_directory(old_directory) == -1)
+return -1;
+}
+else
+{
+write(STDERR_FILENO, "OLDPWD environment variable not set\n", 37);
+return -1;
+}
 
-    return 0;
+return 0;
 }
 
 /**
@@ -29,12 +29,12 @@ int handle_previous_directory()
  */
 int get_current_directory(char *current_directory)
 {
-    if (getcwd(current_directory, sizeof(current_directory)) == NULL)
-    {
-        perror("getcwd");
-        return -1;
-    }
-
-    return 0;
+if (getcwd(current_directory, sizeof(current_directory)) == NULL)
+{
+perror("getcwd");
+return -1;
 }
+return 0;
+}
+
 
