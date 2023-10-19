@@ -38,6 +38,7 @@ void removeEnvironmentVariable(char **args);
 char *customGetEnvironmentVariable(const char *var);
 void cd_builtin(char **args);
 int custom_setenv(const char *name, const char *value);
+int execute_external_command(char **args);
 
 int _setenv(const char *name, const char *value, int overwrite);
 
