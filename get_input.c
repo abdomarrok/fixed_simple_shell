@@ -8,30 +8,30 @@
  */
 char **get_input(void)
 {
-    char *input = NULL;
-    size_t len = 0;
-    ssize_t response;
-    char **args = NULL;
+char *input = NULL;
+size_t len = 0;
+ssize_t response;
+char **args = NULL;
 
-    write(STDOUT_FILENO, "($) ", 4);
+write(STDOUT_FILENO, "($) ", 4);
 
-    response = read_user_input(&input, &len);
+response = read_user_input(&input, &len);
 
-    if (response == (ssize_t)-1)
-    {
-        free(input);
-        exit(EXIT_FAILURE);
-    }
-    else if (response == 0)
-    {
-        printf("EOF detected. Exiting the shell.\n");
-        free(input);
-        exit(EXIT_SUCCESS);
-    }
+if (response == (ssize_t)-1)
+{
+free(input);
+exit(EXIT_FAILURE);
+}
+else if (response == 0)
+{
+printf("EOF detected. Exiting the shell.\n");
+free(input);
+exit(EXIT_SUCCESS);
+}
 
-    args = parse_input(input);
+args = parse_input(input);
 
-    free(input);
+free(input);
 
-    return args;
+return (args);
 }

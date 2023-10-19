@@ -3,7 +3,7 @@
 /**
  * handle_previous_directory - Change to the previous directory.
  *
- * This function changes the current working directory to the previous directory
+ * changes the current working directory to the previous directory
  * as specified by the "OLDPWD" environment variable.
  *
  * Return: 0 on success, -1 on failure.

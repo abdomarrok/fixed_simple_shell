@@ -4,7 +4,7 @@
  * customGetEnvironmentVariable - Custom implementation of getenv.
  * @name: Name of the environment variable to retrieve.
  *
- * This function provides a custom implementation of the getenv function to retrieve
+ * custom implementation of the getenv function to retrieve
  * the value of the specified environment variable from the 'environ' variable.
  *
  * Return: A pointer to the value of the environment variable,

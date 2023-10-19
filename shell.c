@@ -3,7 +3,7 @@
 /**
  * main - Entry point of the shell program.
  *
- * Description: This function serves as the entry point for the shell program. It
+ * Description: entry point for the shell program.
  * runs an infinite loop to continuously prompt for and execute user commands.
  *
  * Return: Always returns 0.

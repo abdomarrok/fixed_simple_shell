@@ -4,7 +4,7 @@
  * cd_handler - Handle the "cd" (change directory) command.
  * @args: Array of arguments, where args[1] is the target directory.
  *
- * This function handles changing the current working directory based on the
+ * changing the current working directory based on the
  * arguments passed. If args[1] is NULL or "~," it changes to the home directory.
  * If args[1] is "-", it changes to the previous directory.
  *

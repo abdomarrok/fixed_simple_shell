@@ -4,7 +4,7 @@
  * run_command - Execute a command represented by the args array.
  * @args: An array of strings containing the command and its arguments.
  *
- * This function checks if the specified command is executable and, if so, 
+ * This function checks if the specified command is executable and, if so,
  * forks a new process to execute the command using execve.
  * After execution, it cleans up allocated resources.
  */

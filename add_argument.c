@@ -31,5 +31,5 @@ exit(EXIT_FAILURE);
 _strcpy(args[*arg_count], arg);
 (*arg_count)++;
 
-return args;
+return (args);
 }
