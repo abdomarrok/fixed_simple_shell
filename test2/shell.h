@@ -39,7 +39,7 @@ int env_builtin(void);
 /* Function execution */
 void  updateEnvironmentVariable(char **args);
 void removeEnvironmentVariable(char **args);
-
+void free_arguments(char **args);
 char *customGetEnvironmentVariable(const char *var);
 void cd_builtin(char **args);
 
