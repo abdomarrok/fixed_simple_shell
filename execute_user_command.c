@@ -4,8 +4,8 @@
  * execute_user_command - Execute a user command based on the first argument.
  * @args: Array of command and arguments.
  *
- * Description: This function executes a user command based on the first argument.
- * It checks the first argument and determines which built-in function or external
+ * Description:executes a user command based on the first argument.
+ * determines which built-in function or external
  * command to execute accordingly.
  */
 void execute_user_command(char **args)

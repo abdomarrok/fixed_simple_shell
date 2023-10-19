@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * Modify or set an environment variable.
+ * updateEnvironmentVariable - Modify or set an environment variable.
  * @args: An array containing the command and arguments.
  *
- * This function is used to modify or set an environment variable.
+ * Description: This function allows you to modify or set an env variable.
  */
 void updateEnvironmentVariable(char **args)
 {
