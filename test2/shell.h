@@ -27,6 +27,8 @@ char **get_input(void);
 
 char *_getenv(const char *name);
 int execute_command(char **args);
+void run_command(char **args);
+void exit_shell(char **args);
 
 /* Converts string to integer */
 int strTOint(const char *str);
@@ -37,6 +39,7 @@ void removeEnvironmentVariable(char **args);
 
 char *customGetEnvironmentVariable(const char *var);
 void cd_builtin(char **args);
+int cd_handler(char **args);
 int custom_setenv(const char *name, const char *value);
 int execute_external_command(char **args);
 
