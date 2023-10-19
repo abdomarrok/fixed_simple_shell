@@ -22,11 +22,11 @@ void execute_user_command(char **args)
         }
         else if (_strcmp(args[0], "setenv") == 0)
         {
-            update_environment_variable(args);
+            updateEnvironmentVariable(args);
         }
         else if (_strcmp(args[0], "unsetenv") == 0)
         {
-            remove_environment_variable(args);
+            removeEnvironmentVariable(args);
         }
         else if (_strcmp(args[0], "cd") == 0)
         {

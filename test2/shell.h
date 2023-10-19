@@ -56,6 +56,7 @@ ssize_t read_user_input(char **input, size_t *len);
 char **parse_input(char *input);
 int custom_setenv(const char *name, const char *value);
 int execute_external_command(char **args);
+void execute_user_command(char **args);
 
 int _setenv(const char *name, const char *value, int overwrite);
 
