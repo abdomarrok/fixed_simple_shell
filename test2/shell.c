@@ -149,11 +149,11 @@ int main(void)
 			}
 			else if (_strcmp(args[0], "setenv") == 0)
 			{
-				setenv_builtin(args);
+				 updateEnvironmentVariable(args);
 			}
 			else if (_strcmp(args[0], "unsetenv") == 0)
 			{
-				unsetenv_builtin(args);
+				removeEnvironmentVariable(args);
 			}
 			else if (_strcmp(args[0], "cd") == 0)
 			{

@@ -32,10 +32,10 @@ int execute_command(char **args);
 int strTOint(const char *str);
 int env_builtin(void);
 /* Function execution */
-void setenv_builtin(char **args);
-void unsetenv_builtin(char **args);
+void  updateEnvironmentVariable(char **args);
+void removeEnvironmentVariable(char **args);
 
-char *custom_getenv(const char *var);
+char *customGetEnvironmentVariable(const char *var);
 void cd_builtin(char **args);
 int custom_setenv(const char *name, const char *value);
 
