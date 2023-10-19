@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * Remove an environment variable.
+ * removeEnvironmentVariable - Remove an environment variable.
  * @args: An array containing the command and arguments.
  */
 void removeEnvironmentVariable(char **args)

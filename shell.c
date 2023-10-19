@@ -1,5 +1,14 @@
 #include "shell.h"
 
+/**
+ * main - Entry point of the shell program.
+ *
+ * Description: This function serves as the entry point for the shell program. It
+ * runs an infinite loop to continuously prompt for and execute user commands.
+ *
+ * Return: Always returns 0.
+ */
+
 int main(void)
 {
 while (1)
@@ -24,8 +33,12 @@ free_arguments(args);
 }
 
 /**
- * Free memory allocated for an array of arguments.
+ * free_arguments - Free memory allocated for an array of arguments.
  * @args: Array of command and arguments.
+ *
+ * Description: This function releases the memory allocated for an array of
+ * command and arguments. It should be used to clean up resources after
+ * executing commands.
  */
 void free_arguments(char **args)
 {

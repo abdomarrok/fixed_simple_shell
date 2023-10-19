@@ -1,19 +1,21 @@
 #include "shell.h"
 
 /**
- * Read user input from the standard input.
+ * read_user_input - Read user input from the standard input.
  * @input: Pointer to the input buffer.
  * @len: Pointer to the buffer length.
+ *
  * Return: The number of characters read or -1 on failure.
  */
 ssize_t read_user_input(char **input, size_t *len)
 {
-return get_line(input, len, stdin);
+return (get_line(input, len, stdin));
 }
 
 /**
- * Parse the user input into command and arguments.
+ * parse_input - Parse the user input into command and arguments.
  * @input: The input string to be parsed.
+ *
  * Return: An array containing the command and arguments.
  */
 char **parse_input(char *input)
@@ -28,7 +30,7 @@ while (token != NULL)
 args = add_argument(args, token, &arg_count);
 token = _strtok(NULL, " \n");
 }
-return args;
+return (args);
 }
 
 

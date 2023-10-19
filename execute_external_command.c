@@ -3,6 +3,10 @@
 /**
  * execute_external_command - Execute an external command.
  * @args: Command to be executed.
+ *
+ * This function executes the specified external command.
+ *
+ * Return: The exit status of the executed command.
  */
 int execute_external_command(char **args)
 {

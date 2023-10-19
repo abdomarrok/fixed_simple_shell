@@ -3,6 +3,10 @@
 /**
  * execute_command - Execute commands if the command is detected.
  * @args: Command to be executed.
+ *
+ * This function executes the specified command if it's detected.
+ *
+ * Return: 0 on success, -1 on failure.
  */
 
 int execute_command(char **args)
@@ -12,7 +16,7 @@ return (0);
 
 if (access(args[0], X_OK) == 0)
 {
-return execute_external_command(args);
+return (execute_external_command(args));
 }
 else
 {
@@ -36,7 +40,7 @@ path[i] = '\0';
 
 if (access(path, X_OK) == 0)
 {
-return execute_external_command(args);
+return (execute_external_command(args));
 }
 else
 {

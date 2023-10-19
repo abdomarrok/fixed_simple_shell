@@ -48,7 +48,8 @@ int cd_handler(char **args);
 int handle_previous_directory(void);
 int get_current_directory(char *current_directory);
 int change_directory(const char *path);
-int update_directory_env_variables(const char *old_directory, const char *new_directory);
+int update_directory_env_variables(const char *old_directory,
+const char *new_directory);
 
 
 char **add_argument(char **args, char *arg, size_t *arg_count);

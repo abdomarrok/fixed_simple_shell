@@ -3,6 +3,8 @@
 /**
  * Execute a user command based on the first argument.
  * @args: Array of command and arguments.
+ *
+ * This function executes a user command based on the first argument.
  */
 void execute_user_command(char **args)
 {

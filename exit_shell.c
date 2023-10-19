@@ -1,5 +1,12 @@
 #include "shell.h"
 
+/**
+ * Handle the exit command for the shell.
+ * @args: Array of arguments, where args[1] is the exit status (optional).
+ *
+ * This function handles the exit command for the shell. It can optionally
+ * take an exit status as an argument.
+ */
 void exit_shell(char **args)
 {
 	int i;
@@ -22,38 +29,4 @@ void exit_shell(char **args)
 	}
 	free(args);
 	exit(0);
-}
-/**
- * strTOint - Converts string to integer
- * @str: String to be converted
- *
- * Return: result * the sign
- * this tells us if the integer converted to is +ve or -ve
-*/
-
-int strTOint(const char *str)
-{
-	int result = 0;
-	int sign = 1;
-	int i = 0;
-
-	if (str[0] == '-')
-	{
-		sign = -1;
-		i = 1;
-	}
-
-	for (; str[i] != '\0'; i++)
-	{
-		if (str[i] >= '0' && str[i] <= '9')
-		{
-			result = (result * 10 + (str[i] - '0'));
-		} else
-		{
-			/* Handle invalid characters here if needed */
-			return (0); /* Return 0 for invalid input */
-		}
-	}
-
-	return (result * sign);
 }

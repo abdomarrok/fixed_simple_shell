@@ -1,12 +1,14 @@
 #include "shell.h"
 
 /**
- * Add a new argument to the list of arguments.
+ * add_argument - Add a new argument to the list of arguments.
  * @args: The current array of arguments.
  * @arg: The new argument to be added.
  * @arg_count: Pointer to the argument count.
+ *
  * Return: The updated array of arguments.
  */
+
 char **add_argument(char **args, char *arg, size_t *arg_count)
 {
 char **temp = realloc(args, (*arg_count + 1) * sizeof(char *));
