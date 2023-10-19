@@ -1,5 +1,5 @@
-#ifndef FUNCTIONS_H
-#define FUNCTIONS_H
+#ifndef SHELL_H
+#define SHELL_H
 
 #define MAX_ARGS 10
 
@@ -12,7 +12,7 @@
 
 extern char **environ;
 
-/* Custom functions */
+
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 char *_strcpy(char *dest, const char *src);
 int _strcmp(const char *s1, const char *s2);

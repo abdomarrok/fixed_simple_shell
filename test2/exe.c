@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * execute_command - execute commands if command is detected
