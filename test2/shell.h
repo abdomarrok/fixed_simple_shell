@@ -39,7 +39,18 @@ void removeEnvironmentVariable(char **args);
 
 char *customGetEnvironmentVariable(const char *var);
 void cd_builtin(char **args);
+
+/*  directories */
 int cd_handler(char **args);
+int handle_previous_directory(void);
+int get_current_directory(char *current_directory);
+int change_directory(const char *path);
+int update_directory_env_variables(const char *old_directory, const char *new_directory);
+
+
+char **add_argument(char **args, char *arg, size_t *arg_count);
+ssize_t read_user_input(char **input, size_t *len);
+char **parse_input(char *input);
 int custom_setenv(const char *name, const char *value);
 int execute_external_command(char **args);
 
