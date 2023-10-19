@@ -10,7 +10,7 @@ char **get_input(void)
     size_t len = 0;
     ssize_t response;
     char **args = NULL;
-    size_t arg_count = 0;
+    
 
     write(STDOUT_FILENO, "$ ", 2);
 
