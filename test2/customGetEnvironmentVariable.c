@@ -32,6 +32,6 @@ char *customGetEnvironmentVariable(const char *name)
             }
         }
     }
-    printf("No match found for %s. Returning NULL.\n");
+    printf("No match found for %s. Returning NULL.\n",name);
     return NULL;
 }
